@@ -1,6 +1,13 @@
-<h1>Editing Genre</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1>Editing Genre</h1>
 
-<%= render 'form', genre: @genre %>
+      <%= render 'form', genre: @genre %>
 
-<%= link_to 'Show', @genre %> |
-<%= link_to 'Back', genres_path %>
+      <%= link_to 'Show', @genre, class: 'btn btn-default' %> |
+      <%= link_to 'Back', genres_path, class: 'btn btn-default' %>
+    </div>
+  </div>
+</div>
+
