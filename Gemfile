@@ -44,6 +44,7 @@ gem 'font-awesome-rails'
 gem 'jquery-rails'
 
 gem 'annotate'
+gem 'awesome_print'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -2,6 +2,10 @@ class Song < ApplicationRecord
   belongs_to :artist
 
   validates :name, :artist_id, :artist, presence: true
+
+  def self.only_d_songs
+    where('name LIKE "%d%"')
+  end
 end
 
 
