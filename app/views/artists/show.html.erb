@@ -12,16 +12,19 @@
         <strong>Genre:</strong>
         <%= link_to @artist.genre.name, genre_path(@artist.genre) %>
       </p>
+      <div class="well">
+        <h3 class="well-title">Songs:</h3>
+        <ul>
+          <% @artist.songs.order('name').each do |ditty| %>
+            <li><%= link_to ditty.name, song_path(ditty) %></li>
+          <% end %>
+        </ul>
+      </div>
 
-      <h3>Songs:</h3>
-      <ul>
-        <% @artist.songs.order('name').each do |ditty| %>
-          <li><%= ditty.name %></li>
-        <% end %>
-      </ul>
-
-      <%= link_to 'Edit', edit_artist_path(@artist), class: 'btn btn-default' %>
-      <%= link_to 'Back', artists_path, class: 'btn btn-default' %>
+      <div class="form-button">
+        <%= link_to 'Edit', edit_artist_path(@artist), class: 'btn btn-default' %>
+        <%= link_to 'Back', artists_path, class: 'btn btn-default' %>
+      </div>
     </div>
   </div>
 </div>
