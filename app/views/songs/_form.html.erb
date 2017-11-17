@@ -18,7 +18,7 @@
 
   <div class="field form-group">
     <%= form.label :album_id %>
-    <%= form.collection_select :album_id, Album.all, :id, :name, {}, class: 'form-control' %>
+    <%= form.collection_select :album_id, Album.order('name'), :id, :name, {}, class: 'form-control' %>
   </div>
 
   <div class="actions form-group form-button">

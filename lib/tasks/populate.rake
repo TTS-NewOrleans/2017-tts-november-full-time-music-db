@@ -14,7 +14,7 @@ namespace :db do
 
       rand(5..10).times do
         artist = Artist.create(name: Faker::StarWars.vehicle,
-                               bio: Faker::Hipster.paragraph(5, true, 4),
+                               bio: Faker::Hipster.paragraphs(5),
                                genre_id: genre.id)
 
         rand(3..6).times do
