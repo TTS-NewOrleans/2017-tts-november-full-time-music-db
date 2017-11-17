@@ -7,7 +7,7 @@
       <h1><%= @song.name %></h1>
 
       <h4>
-        <strong>by <%= @song.artist.name %></strong>
+        <strong>by <%= @song.album.artist.try(:name) %></strong>
       </h4>
 
       <div class="form-button">

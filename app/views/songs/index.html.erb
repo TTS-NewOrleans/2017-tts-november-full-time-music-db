@@ -5,10 +5,16 @@
                 col-xs-10 col-xs-offset-1">
       <h1 class="index-title">Songs</h1>
 
+      <div class="form-button text-right">
+        <%= link_to 'New Song', new_song_path, class: 'btn btn-default' %>
+      </div>
+      <br>
+
       <table class="table table-hover">
         <thead>
           <tr>
             <th>Name</th>
+            <th>Album</th>
             <th>Artist</th>
             <th colspan="3"></th>
           </tr>
@@ -18,7 +24,8 @@
           <% @songs.each do |song| %>
             <tr>
               <td><%= song.name %></td>
-              <td><%= song.artist.name %></td>
+              <td><%= link_to song.album.try(:name), album_path(song.album) %></td>
+              <td><%= link_to song.album.try(:artist).try(:name), artist_path(song.album.artist) %></td>
               <td><%= link_to 'Show', song, class: 'btn btn-xs btn-default' %></td>
               <td><%= link_to 'Edit', edit_song_path(song), class: 'btn btn-xs btn-default' %></td>
               <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-default' %></td>
@@ -26,12 +33,6 @@
           <% end %>
         </tbody>
       </table>
-
-      <br>
-
-      <div class="form-button">
-        <%= link_to 'New Song', new_song_path, class: 'btn btn-default' %>
-      </div>
     </div>
   </div>
 </div>

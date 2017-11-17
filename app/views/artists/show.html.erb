@@ -12,11 +12,25 @@
         <strong>Genre:</strong>
         <%= link_to @artist.genre.name, genre_path(@artist.genre) %>
       </p>
+
+      <p>
+        <strong>Bio:</strong>
+        <p><em><%= @artist.bio %></em></p>
+      </p>
+
       <div class="well">
-        <h3 class="well-title">Songs:</h3>
+        <h3 class="well-title">Albums:</h3>
         <ul>
-          <% @artist.songs.order('name').each do |ditty| %>
-            <li><%= link_to ditty.name, song_path(ditty) %></li>
+          <% @artist.albums.order('name').each do |disc| %>
+            <div class="panel">
+              <li><h4 class="text-center"><%= link_to disc.name, album_path(disc) %></h4></li>
+              <hr>
+              <ol>
+                <% disc.songs.each do |track| %>
+                  <li><%= link_to track.name, song_path(track) %></li>
+                <% end %>
+              </ol>
+            </div>
           <% end %>
         </ul>
       </div>

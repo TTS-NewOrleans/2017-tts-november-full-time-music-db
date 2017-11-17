@@ -4,6 +4,12 @@
     <div class="col-md-8 col-md-offset-2
                 col-xs-10 col-xs-offset-1">
       <h1 class="index-title">Artists</h1>
+
+      <div class="form-button text-right">
+        <%= link_to 'New Artist', new_artist_path, class: 'btn btn-default' %>
+      </div>
+      <br>
+
       <table class="table table-hover">
         <thead>
           <tr>
@@ -17,7 +23,7 @@
           <% @artists.each do |artist| %>
             <tr>
               <td><%= artist.name %></td>
-              <td><%= artist.genre.name %></td>
+              <td><%= link_to artist.genre.name, genre_path(artist.genre) %></td>
               <td><%= link_to 'Show', artist, class: 'btn btn-xs btn-default' %></td>
               <td><%= link_to 'Edit', edit_artist_path(artist), class: 'btn btn-xs btn-default' %></td>
               <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-default' %></td>
@@ -25,12 +31,6 @@
           <% end %>
         </tbody>
       </table>
-
-      <br>
-
-      <div class="form-button">
-        <%= link_to 'New Artist', new_artist_path, class: 'btn btn-default' %>
-      </div>
     </div>
   </div>
 </div>

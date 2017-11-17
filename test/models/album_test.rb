@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ArtistTest < ActiveSupport::TestCase
+class AlbumTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
@@ -8,16 +8,15 @@ end
 
 # == Schema Information
 #
-# Table name: artists
+# Table name: albums
 #
 #  id         :integer          not null, primary key
 #  name       :string
-#  genre_id   :integer
+#  artist_id  :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  bio        :text
 #
 # Indexes
 #
-#  index_artists_on_genre_id  (genre_id)
+#  index_albums_on_artist_id  (artist_id)
 #

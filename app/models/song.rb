@@ -1,11 +1,11 @@
 class Song < ApplicationRecord
-  belongs_to :artist
+  belongs_to :album
 
-  validates :name, :artist_id, :artist, presence: true
+  validates :name, :album_id, :album, presence: true
+  validates_uniqueness_of :name, scope: :album
 
-  def self.only_d_songs
-    where('name LIKE "%d%"')
-  end
+
+
 end
 
 
@@ -15,11 +15,11 @@ end
 #
 #  id         :integer          not null, primary key
 #  name       :string
-#  artist_id  :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  album_id   :integer
 #
 # Indexes
 #
-#  index_songs_on_artist_id  (artist_id)
+#  index_songs_on_album_id  (album_id)
 #

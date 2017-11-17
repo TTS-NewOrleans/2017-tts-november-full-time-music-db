@@ -5,6 +5,11 @@
                 col-xs-10 col-xs-offset-1">
       <h1 class="index-title">Genres</h1>
 
+      <div class="form-button text-right">
+        <%= link_to 'New Genre', new_genre_path, class: 'btn btn-default' %>
+      </div>
+      <br>
+
       <table class="table table-hover">
         <thead>
           <tr>
@@ -24,12 +29,6 @@
           <% end %>
         </tbody>
       </table>
-
-      <br>
-
-      <div class="form-button">
-        <%= link_to 'New Genre', new_genre_path, class: 'btn btn-default' %>
-      </div>
     </div>
   </div>
 </div>

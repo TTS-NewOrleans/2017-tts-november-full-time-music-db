@@ -14,11 +14,11 @@ two:
 #
 #  id         :integer          not null, primary key
 #  name       :string
-#  artist_id  :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  album_id   :integer
 #
 # Indexes
 #
-#  index_songs_on_artist_id  (artist_id)
+#  index_songs_on_album_id  (album_id)
 #

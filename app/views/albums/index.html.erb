@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2
+                col-xs-10 col-xs-offset-1">
+      <h1 class="index-title">Albums</h1>
+
+      <div class="form-button text-right">
+        <%= link_to 'New Album', new_album_path, class: 'btn btn-default' %>
+      </div>
+      <br>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Artist</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @albums.each do |album| %>
+            <tr>
+              <td><%= album.name %></td>
+              <td><%= album.artist.try(:name) %></td>
+              <td><%= link_to 'Show', album, class: 'btn btn-default btn-xs' %></td>
+              <td><%= link_to 'Edit', edit_album_path(album), class: 'btn btn-default btn-xs' %></td>
+              <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default btn-xs' %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
